@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 @SuppressLint("SetTextI18n")
-class RedScreenOfDeathActivity : AppCompatActivity() {
+internal class RedScreenOfDeathActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
