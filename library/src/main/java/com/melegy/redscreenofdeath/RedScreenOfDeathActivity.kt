@@ -7,20 +7,31 @@ import android.content.Intent
 import android.content.Intent.*
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.util.TypedValue
+import android.view.Window
+import android.view.WindowManager
 import android.widget.LinearLayout
 import android.widget.LinearLayout.LayoutParams
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+
 
 @SuppressLint("SetTextI18n")
 internal class RedScreenOfDeathActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.hide()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = red
+            window.navigationBarColor = red
+        }
 
         val threadName = requireNotNull(intent.getStringExtra(EXTRA_THREAD))
         val throwable = intent.getSerializableExtra(EXTRA_THROWABLE) as Throwable
@@ -29,7 +40,7 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
             orientation = LinearLayout.VERTICAL
             val padding = convertDpToPx(16f)
             setPadding(padding, padding, padding, padding)
-            setBackgroundColor(ContextCompat.getColor(this@RedScreenOfDeathActivity, R.color.red))
+            setBackgroundColor(red)
 
             val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
             addView(TextView(this@RedScreenOfDeathActivity).apply {
@@ -71,6 +82,7 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics).toInt()
 
     companion object {
+        private val red = Color.parseColor("#880000")
 
         private const val EXTRA_THREAD = "com.melegy.redscreenofdeath.EXTRA_THREAD"
         private const val EXTRA_THROWABLE = "com.melegy.redscreenofdeath.EXTRA_THROWABLE"
