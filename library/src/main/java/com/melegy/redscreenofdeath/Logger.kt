@@ -3,7 +3,7 @@ package com.melegy.redscreenofdeath
 import android.util.Log
 
 /** Default logger that logs to android.util.Log.  */
-class Logger(private val tag: String) {
+internal class Logger(private val tag: String) {
     private val logLevel: Int = Log.INFO
 
     private fun canLog(level: Int): Boolean {
