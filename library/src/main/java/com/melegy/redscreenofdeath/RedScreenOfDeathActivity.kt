@@ -34,12 +34,14 @@ class RedScreenOfDeathActivity : AppCompatActivity() {
             val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
             addView(TextView(this@RedScreenOfDeathActivity).apply {
                 setDefaultTextViewStyle()
+                setTypeface(typeface, Typeface.BOLD)
                 textSize = 18f
                 text = "App crashed in $threadName thread"
             }, params)
 
             addView(TextView(this@RedScreenOfDeathActivity).apply {
                 setDefaultTextViewStyle()
+                setTypeface(typeface, Typeface.BOLD)
                 textSize = 14f
                 setPadding(0, convertDpToPx(16f), 0, 0)
                 text = throwable.javaClass.simpleName
