@@ -16,33 +16,9 @@ class Logger(private val tag: String) {
         }
     }
 
-    fun v(text: String, throwable: Throwable? = null) {
-        if (canLog(Log.VERBOSE)) {
-            Log.v(tag, text, throwable)
-        }
-    }
-
-    fun i(text: String, throwable: Throwable? = null) {
-        if (canLog(Log.INFO)) {
-            Log.i(tag, text, throwable)
-        }
-    }
-
-    fun w(text: String, throwable: Throwable? = null) {
-        if (canLog(Log.WARN)) {
-            Log.w(tag, text, throwable)
-        }
-    }
-
     fun e(text: String, throwable: Throwable? = null) {
         if (canLog(Log.ERROR)) {
             Log.e(tag, text, throwable)
-        }
-    }
-
-    fun log(priority: Int, msg: String, forceLog: Boolean = false) {
-        if (forceLog || canLog(priority)) {
-            Log.println(priority, tag, msg)
         }
     }
 
