@@ -17,4 +17,3 @@ internal class UncaughtExceptionHandler(private val crashListener: CrashListener
         Logger.logger.d("RedDeathScreen completed exception processing.")
     }
 }
-
