@@ -2,4 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.melegy.redscreenofdeath">
 
+    <application>
+        <activity android:name="com.melegy.redscreenofdeath.RedScreenOfDeathActivity" />
+    </application>
 </manifest>
