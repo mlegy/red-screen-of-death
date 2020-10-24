@@ -1,0 +1,38 @@
+def libraryGroupId = 'com.melegy.redscreenofdeath'
+def libraryArtifactId = 'red-screen-of-death-no-op'
+def libraryVersion = '0.1'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = libraryGroupId
+                artifactId = libraryArtifactId
+                version = libraryVersion
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.property('bintray.user')
+    key = project.property('bintray.token')
+
+    pkg {
+        repo = 'red-screen-of-death'
+        name = 'red-screen-of-death-no-op'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/mlegy/red-screen-of-death.git'
+        websiteUrl = 'https://github.com/mlegy/red-screen-of-death/tree/main/sample'
+        version {
+            name = libraryVersion
+            desc = 'Android library that allows launching an activity when your app crashes with the crash details. Similar to Flutter red screen of death screen.'
+            released = new Date()
+        }
+        publish = true
+        publicDownloadNumbers = true
+        override = true
+    }
+    publications = ['release']
+}
