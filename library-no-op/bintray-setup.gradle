@@ -6,6 +6,7 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
+                artifact androidSourcesJar
                 from components.release
                 groupId = libraryGroupId
                 artifactId = libraryArtifactId
@@ -13,6 +14,15 @@ afterEvaluate {
             }
         }
     }
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.source
+}
+
+artifacts {
+    archives androidSourcesJar
 }
 
 bintray {
