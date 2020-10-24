@@ -8,7 +8,8 @@ object RedScreenOfDeath {
     fun init(application: Application) {
         val crashListener =
             CrashListener { thread, ex -> handleUncaughtException(application, thread, ex) }
-        val crashHandler = UncaughtExceptionHandler(crashListener)
+        val crashHandler =
+            UncaughtExceptionHandler(crashListener, Thread.getDefaultUncaughtExceptionHandler())
         Thread.setDefaultUncaughtExceptionHandler(crashHandler)
     }
 
