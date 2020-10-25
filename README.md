@@ -7,7 +7,7 @@ A simple screen that is shown when your app gets crashed instead of the normal c
 It's very similar to the one in Flutter.
 
 
-<img src="https://github.com/mlegy/red-screen-of-death/blob/main/art/sample.jpg" width="35%">
+<img src="https://github.com/mlegy/red-screen-of-death/blob/main/art/sample.gif" width="35%">
 
 
 ## Install:
