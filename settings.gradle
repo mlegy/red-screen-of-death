@@ -1,4 +1,4 @@
-include ':library'
-include ':library-no-op'
+include ':red-screen-of-death'
+include ':red-screen-of-death-no-op'
 include ':sample'
 rootProject.name = "RedScreenOfDeath"

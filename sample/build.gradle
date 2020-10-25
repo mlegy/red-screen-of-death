@@ -37,6 +37,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    debugImplementation(project(":library"))
-    releaseImplementation(project(":library-no-op"))
+    debugImplementation(project(':red-screen-of-death'))
+    releaseImplementation(project(':red-screen-of-death-no-op'))
 }
