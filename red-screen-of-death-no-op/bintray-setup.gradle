@@ -1,6 +1,6 @@
 def libraryGroupId = 'com.melegy.redscreenofdeath'
 def libraryArtifactId = 'red-screen-of-death-no-op'
-def libraryVersion = '0.1.0'
+def libraryVersion = '0.1.1'
 
 afterEvaluate {
     publishing {
