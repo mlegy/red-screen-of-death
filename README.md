@@ -24,19 +24,31 @@ repositories {
 }
 
 dependencies {
-    debugImplementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.0'
-    releaseImplementation 'com.melegy.redscreenofdeath:red-screen-of-death-no-op:0.1.0'
+    debugImplementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.1'
+    releaseImplementation 'com.melegy.redscreenofdeath:red-screen-of-death-no-op:0.1.1'
 }
 ```
 
 In your  `Application`  class:
 
+- Kotlin
 ```kotlin
 class MyApp : Application() {  
     override fun onCreate() {  
         super.onCreate()  
         RedScreenOfDeath.init(this)  
     }  
+}
+```
+
+- Java
+```java
+public class test extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        RedScreenOfDeath.init(this);
+    }
 }
 ```
 
