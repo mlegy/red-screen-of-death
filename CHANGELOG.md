@@ -5,11 +5,12 @@ Change Log
 
 _2020-10-25_
 
-**This is the first release of the library.**
+- Add support for Java.
+- Remove calling default uncaught exception handler after calling the one from the library.
+
 
 ## Version 0.1.0
 
 _2020-10-24_
 
-- Add support for Java.
-- Remove calling default uncaught exception handler after calling the one from the library.
+This is the first release of the library
