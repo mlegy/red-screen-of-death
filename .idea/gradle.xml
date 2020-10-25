@@ -11,8 +11,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/library" />
-            <option value="$PROJECT_DIR$/library-no-op" />
+            <option value="$PROJECT_DIR$/red-screen-of-death" />
+            <option value="$PROJECT_DIR$/red-screen-of-death-no-op" />
             <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>
