@@ -43,7 +43,7 @@ class MyApp : Application() {
 
 - Java
 ```java
-public class test extends Application {
+public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
