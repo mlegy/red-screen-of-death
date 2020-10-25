@@ -5,6 +5,7 @@ import android.content.Context
 import kotlin.system.exitProcess
 
 object RedScreenOfDeath {
+    @JvmStatic
     fun init(application: Application) {
         val crashListener =
             CrashListener { thread, ex -> handleUncaughtException(application, thread, ex) }
