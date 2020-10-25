@@ -2,26 +2,21 @@ package com.melegy.redscreenofdeath
 
 import android.app.Application
 import android.content.Context
-import kotlin.system.exitProcess
 
 object RedScreenOfDeath {
     @JvmStatic
     fun init(application: Application) {
-        val crashListener =
-            CrashListener { thread, ex -> handleUncaughtException(application, thread, ex) }
-        val crashHandler =
-            UncaughtExceptionHandler(crashListener, Thread.getDefaultUncaughtExceptionHandler())
+        val crashListener = CrashListener { t, e -> handleUncaughtException(application, t, e) }
+        val crashHandler = UncaughtExceptionHandler(crashListener)
         Thread.setDefaultUncaughtExceptionHandler(crashHandler)
     }
 
-    private fun handleUncaughtException(context: Context, thread: Thread, ex: Throwable) {
-        context.startActivity(
-            RedScreenOfDeathActivity.newIntent(
-                context = context,
-                threadName = thread.name,
-                throwable = ex
-            )
+    private fun handleUncaughtException(context: Context, thread: Thread, throwable: Throwable) {
+        val intent = RedScreenOfDeathActivity.newIntent(
+            context = context,
+            threadName = thread.name,
+            throwable = throwable
         )
-        exitProcess(1)
+        context.startActivity(intent)
     }
 }
