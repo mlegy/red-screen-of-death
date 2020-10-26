@@ -1,11 +1,14 @@
 package com.melegy.redscreenofdeath.sample
 
 import android.app.Application
-import com.melegy.redscreenofdeath.RedScreenOfDeath
+import com.melegy.redscreenofdeath.initRedScreenOfDeath
 
 class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        RedScreenOfDeath.init(this)
+
+        // Using Kotlin Extension over
+        //RedScreenOfDeath.init(this)
+        initRedScreenOfDeath()
     }
 }
