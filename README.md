@@ -36,7 +36,8 @@ In your  `Application`  class:
 class MyApp : Application() {  
     override fun onCreate() {  
         super.onCreate()  
-        RedScreenOfDeath.init(this)  
+        RedScreenOfDeath.init(this)
+        // Or initRedScreenOfDeath()
     }  
 }
 ```
