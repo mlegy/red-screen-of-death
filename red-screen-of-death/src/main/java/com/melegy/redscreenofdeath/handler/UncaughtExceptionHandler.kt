@@ -1,5 +1,7 @@
-package com.melegy.redscreenofdeath
+package com.melegy.redscreenofdeath.handler
 
+import com.melegy.redscreenofdeath.listener.CrashListener
+import com.melegy.redscreenofdeath.logger.Logger
 import kotlin.system.exitProcess
 
 internal class UncaughtExceptionHandler(private val crashListener: CrashListener) :

@@ -2,6 +2,9 @@ package com.melegy.redscreenofdeath
 
 import android.app.Application
 import android.content.Context
+import com.melegy.redscreenofdeath.handler.UncaughtExceptionHandler
+import com.melegy.redscreenofdeath.listener.CrashListener
+import com.melegy.redscreenofdeath.ui.RedScreenOfDeathActivity
 
 object RedScreenOfDeath {
     @JvmStatic
