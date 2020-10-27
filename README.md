@@ -53,3 +53,6 @@ public class MyApp extends Application {
 ```
 
 And you are done!
+
+## Disclaimer
+This should be used only in your debug buids because if you have any other library that has it's own implementation of `UncaughtExceptionHandler` it won't work. Red Screen of Death doesn't propagate the exception to other exception handlers, because we don't want to show the "App stopped" dialog. 
