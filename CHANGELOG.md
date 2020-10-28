@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+## Version 0.1.2
+
+_2020-10-28_
+
+- Add share button that shares a text containing:
+    - App name
+    - Version name
+    - Version code
+    - Stacktrace of the crash
+
 ## Version 0.1.1
 
 _2020-10-25_
