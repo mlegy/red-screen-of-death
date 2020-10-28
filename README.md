@@ -10,7 +10,7 @@ It's very similar to the one in Flutter.
 <img src="https://github.com/mlegy/red-screen-of-death/blob/main/art/sample.gif" width="35%">
 
 
-## Install:
+## Install
 
 `RedScreenOfDeath` is distributed via `JCenter`. Add the dependencies to your `build.gradle` file.
 
@@ -24,8 +24,8 @@ repositories {
 }
 
 dependencies {
-    debugImplementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.1'
-    releaseImplementation 'com.melegy.redscreenofdeath:red-screen-of-death-no-op:0.1.1'
+    debugImplementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.2'
+    releaseImplementation 'com.melegy.redscreenofdeath:red-screen-of-death-no-op:0.1.2'
 }
 ```
 
