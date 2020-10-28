@@ -3,6 +3,6 @@
     package="com.melegy.redscreenofdeath">
 
     <application>
-        <activity android:name="com.melegy.redscreenofdeath.RedScreenOfDeathActivity" />
+        <activity android:name="com.melegy.redscreenofdeath.internal.RedScreenOfDeathActivity" />
     </application>
 </manifest>
