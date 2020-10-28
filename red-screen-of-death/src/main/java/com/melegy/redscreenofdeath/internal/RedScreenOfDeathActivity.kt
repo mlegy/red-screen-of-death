@@ -54,7 +54,7 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
                 action = ACTION_SEND
                 putExtra(
                     EXTRA_TEXT,
-                    Utils.normalizeException(appDate, threadName, throwable)
+                    Utils.generateTextToShare(appDate, threadName, throwable)
                 )
                 type = "text/plain"
             }
@@ -64,7 +64,7 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
     }
 
     private fun logException(throwable: Throwable) {
-        Logger.logger.e("═══════════ Exception caught by Red Screen Of Death library ═══════════")
+        Logger.logger.e("══════════ Exception caught by Red Screen Of Death library ═════════")
         Logger.logger.e(throwable.javaClass.simpleName, throwable)
         Logger.logger.e("════════════════════════════════════════════════════════════════════")
     }

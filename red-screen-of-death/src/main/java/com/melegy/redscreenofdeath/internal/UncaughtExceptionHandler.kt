@@ -10,7 +10,7 @@ internal class UncaughtExceptionHandler(private val crashListener: CrashListener
     } catch (e: Exception) {
         Logger.logger.e("An error occurred in the uncaught exception handler", e)
     } finally {
-        Logger.logger.d("RedDeathScreen completed exception processing.")
+        Logger.logger.d("Red Screen of Death completed exception processing.")
         exitProcess(1)
     }
 }
