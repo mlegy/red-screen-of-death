@@ -4,11 +4,12 @@ import android.content.Context
 
 internal object Utils {
 
-    fun normalizeException(appData: AppDate, threadName: String, throwable: Throwable): String =
-        "${appData.name} App crashed in $threadName\n" +
+    fun generateTextToShare(appData: AppDate, threadName: String, throwable: Throwable): String =
+        "${appData.name} crashed in $threadName thread\n" +
                 "Version code: ${appData.versionCode}\n" +
                 "Version name: ${appData.versionName}\n" +
-                "Stack Trace: ${throwable.stackTraceToString()}"
+                "Stack Trace:\n" +
+                throwable.stackTraceToString()
 
     fun getAppData(context: Context): AppDate {
         val packageManager = context.packageManager
