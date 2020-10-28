@@ -1,4 +1,4 @@
-package com.melegy.redscreenofdeath
+package com.melegy.redscreenofdeath.internal
 
 import kotlin.system.exitProcess
 

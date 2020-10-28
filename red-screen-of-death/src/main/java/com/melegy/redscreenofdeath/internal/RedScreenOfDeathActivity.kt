@@ -1,4 +1,4 @@
-package com.melegy.redscreenofdeath
+package com.melegy.redscreenofdeath.internal
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,6 +10,7 @@ import android.text.method.ScrollingMovementMethod
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.melegy.redscreenofdeath.R
 import com.melegy.redscreenofdeath.databinding.ActivityRedScreenOfDeathBinding
 
 @SuppressLint("SetTextI18n")
@@ -34,6 +35,7 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
         val throwable = intent.getSerializableExtra(EXTRA_THROWABLE) as Throwable
 
         renderException(threadName, throwable)
+        setupShareButton(threadName, throwable)
         logException(throwable)
     }
 
@@ -42,6 +44,23 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
         binding.textException.text = throwable.javaClass.simpleName
         binding.textStackTrace.text = throwable.stackTraceToString()
         binding.textStackTrace.movementMethod = ScrollingMovementMethod()
+    }
+
+    private fun setupShareButton(threadName: String, throwable: Throwable) {
+        val appDate = requireNotNull(intent.getParcelableExtra<AppDate>(EXTRA_APP_DATA))
+
+        binding.shareButton.setOnClickListener {
+            val sendIntent = Intent().apply {
+                action = ACTION_SEND
+                putExtra(
+                    EXTRA_TEXT,
+                    Utils.normalizeException(appDate, threadName, throwable)
+                )
+                type = "text/plain"
+            }
+            val shareIntent = createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
     }
 
     private fun logException(throwable: Throwable) {
@@ -53,15 +72,18 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
     companion object {
         private const val EXTRA_THREAD = "com.melegy.redscreenofdeath.EXTRA_THREAD"
         private const val EXTRA_THROWABLE = "com.melegy.redscreenofdeath.EXTRA_THROWABLE"
+        private const val EXTRA_APP_DATA = "com.melegy.redscreenofdeath.EXTRA_APP_DATA"
 
         fun newIntent(
             context: Context,
             threadName: String,
             throwable: Throwable,
+            appData: AppDate,
         ) = Intent(context, RedScreenOfDeathActivity::class.java)
             .apply {
                 putExtra(EXTRA_THREAD, threadName)
                 putExtra(EXTRA_THROWABLE, throwable)
+                putExtra(EXTRA_APP_DATA, appData)
                 flags =
                     FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NO_ANIMATION
             }
