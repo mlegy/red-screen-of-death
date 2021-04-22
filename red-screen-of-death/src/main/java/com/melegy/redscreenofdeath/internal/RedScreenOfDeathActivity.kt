@@ -40,10 +40,12 @@ internal class RedScreenOfDeathActivity : AppCompatActivity() {
     }
 
     private fun renderException(threadName: String, throwable: Throwable) {
-        binding.textThreadName.text = "App crashed in $threadName thread"
-        binding.textException.text = throwable.javaClass.simpleName
-        binding.textStackTrace.text = throwable.stackTraceToString()
-        binding.textStackTrace.movementMethod = ScrollingMovementMethod()
+        with(binding) {
+            textThreadName.text = "App crashed in $threadName thread"
+            textException.text = throwable.javaClass.simpleName
+            textStackTrace.text = throwable.stackTraceToString()
+            textStackTrace.movementMethod = ScrollingMovementMethod()
+        }
     }
 
     private fun setupShareButton(threadName: String, throwable: Throwable) {

@@ -1,6 +1,7 @@
 package com.melegy.redscreenofdeath.internal
 
 import android.content.Context
+import android.os.Build
 
 internal object Utils {
 
@@ -17,7 +18,7 @@ internal object Utils {
         val appName = packageManager.getApplicationLabel(context.applicationInfo).toString()
         val appVersionName = packageInfo.versionName
         val appVersionCode =
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 packageInfo.longVersionCode.toString()
             } else {
                 packageInfo.versionCode.toString()
