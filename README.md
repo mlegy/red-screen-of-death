@@ -20,12 +20,12 @@ In your  `build.gradle`:
 
 ```groovy
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 dependencies {
-    debugImplementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.2'
-    releaseImplementation 'com.melegy.redscreenofdeath:red-screen-of-death-no-op:0.1.2'
+    debugImplementation 'com.mlegy.redscreenofdeath:red-screen-of-death:0.1.3'
+    releaseImplementation 'com.mlegy.redscreenofdeath:red-screen-of-death-no-op:0.1.3'
 }
 ```
 

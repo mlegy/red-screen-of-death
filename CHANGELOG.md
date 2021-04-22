@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+## Version 0.1.3
+
+_2021-04-22_
+
+- Migrated from jcenter to maven.
+- Unfortunately I had to change the group id from `com.melegy.redscreenofdeath` to `com.mlegy.redscreenofdeath`.
+- Bump kotlin version.
+
 ## Version 0.1.2
 
 _2020-10-28_
